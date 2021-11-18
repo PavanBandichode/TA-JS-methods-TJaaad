@@ -1,19 +1,21 @@
 let message = 'If you are still thinking the answer is no!';
 
 // Log the length of the variable message like `The length of [message] is [length]`
-
+console.log(`Length of ${message} is ${message.length}`);
 // Log the character at index 0 of the variable message like `The first character of [message] is [character]`
-
+console.log(`Length of ${message} is ${message.charAt(0)}`);
 // Log the last character of message using length like `The last character of [message] is [character]`
-
+console.log(`Length of ${message} is ${message.charAt(message.length-1)}`);
 // Log the index of word "you" in message
-
+console.log(`Length of ${message} is ${message.indexOf("you")}`);
 // Log the index of word "still" in message
-
+console.log(`Length of ${message} is ${message.indexOf("still")}`);
 // Log the index of word "answers" in message
-
+console.log(`Length of ${message} is ${message.indexOf("answers")}`);
 // Log true or false based on whether the word "answers" exist in message or not
-
+for(let check of message.charAt){
+    return check==="answers";
+}
 // Log true or false based on whether the word "they" exist in message or not
 
 // Log true or false based on whether the word "is" exist in message or not
