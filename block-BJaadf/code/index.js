@@ -1,35 +1,48 @@
 let fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
 
 // Add a new element ('Papaya') into fruits array at end
-
+fruits.push("Papaya");
+console.log(fruits);
 // Remove the last element from fruits array
-
+fruits.pop();
+console.log(fruits);
 // Log the current length of fruits array
-
+console.log(fruits.length);
 // Remove the first element from fruits and log the value of fruits (use delete arr[0])
-
+delete fruits[0];
+console.log(fruits);
 // Log the element on index 0 and 1
-
+console.log(fruits[0]);
+console.log(fruits[1]);
 // If the element at 0 index is undefined and index 1 is 'Banana' shift all the values to one lower index (use shift method)
-
+fruits.shift();
+console.log(fruits);
 // Add a new element to the start ('Guava') and shift the index of all other to one higher value
-
+fruits.unshift('Guava');
+console.log(fruits,"line 20");
 // Add a new element to the start ('Dragon Fruit') and shift the index of all other to one higher value
-
+fruits.unshift('Dragon Fruit');
+console.log(fruits,"line 23");
 // Log true or false based on the value at index 0 and 1 is 'Dragon Fruit' and 'Guava' or not
-
+let check=fruits.some(elem=> {return elem=="Dragon Fruit";});
+console.log(check);
+// let check=fruits.some(elem=> {return elem=="Guava";});
+// console.log(check);
 // Update the value of index 1 to `Pears`
-
+fruits[1]="pears";
+console.log(fruits);
 // Add the 'Kiwi' and 'Lemon' to the index 1 and 2 and shift the other element to next index (use splice to add element)
-
+fruits.splice(1,2,'Kiwi','Lemon');
+console.log(fruits);
 // Remove (slice) all the element from index 5
-
+fruits.slice(5);//[] gives empty array
+console.log(fruits);
 // Create another array named moreFruits with values ['Berries', 'Melons']
-
+let moreFruits=['Berries', 'Melons'];
 // Concat moreFruits into fruits array (re-assign so the value gets updated)
-
+fruits.concat(moreFruits);
 // Log the name of all fruit in console
-
+console.log(fruits);
 // Convert each fruit name to lowercase and log it
 
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
