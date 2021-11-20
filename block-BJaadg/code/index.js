@@ -7,15 +7,16 @@ let to = 'Arya Stark';
 /*
 1. Find the index of the first 'is' in the variable quote. And store it in a new variable named indexOfIs
 */
-
+let indexOfIs=quote.indexOf("is");
+console.log(indexOfIs);
 /*
 2. Find the character at the index indexOfIs (Problem 1) in quote.
 */
-
+quote.charAt(6);
 /*
 3. Log the message saying `The index of first is in quote is 7`
 */
-
+console.log(`The index of first is in quote is ${quote.indexOf("is")}`)
 /*
 4. Log the message for first 6 characters of quote like this.
   The character at index 0 is 'T'
@@ -25,32 +26,37 @@ let to = 'Arya Stark';
   The character at index 4 is 'e'
   The character at index 5 is ' '
 */
-
+for(let i=0;i<=5;i++){
+  console.log(quote.charAt(i),"Q.4");
+}
 /*
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
 */
-
+from.concat("said"," " ,quote);
+console.log(from.concat(" ","said"," " ,quote,"to",to,"Q.5");
 /*
 6. Does from, to and quote ends with "rk". Check all three.
 */
-
+from.includes("rk");
+quote.includes("rk");
+to.includes("rk");
 /*
 7. Does quote includes the word "Only"
 */
-
+quote.includes("Only");
 /*
 8. Does quote includes the word " we"
 */
-
+quote.includes(" we");
 /*
 9. Find the index of the the word `we` in quote
 */
-
+quote.indexOf("we");
 /*
 10. Split the quote into individual word and store it in a variable name quoteSplitted
 */
-
+let quoteSplitted=quote.split('');
 /*
 11. Change the word "today" in quoteSplitted to "tomorrow" and join all the words to form a sentance.
 */
