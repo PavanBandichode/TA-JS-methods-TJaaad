@@ -53,6 +53,15 @@ numbers.slice(3,8);
 // - Make a subset of strings array ['a','collection']
 numbers.splice(3,4);
 // - Replace 12 & 18 with 1221 and 1881
+console.log(numbers.map(num=>{
+  if(num==12){
+    return 1221;
+  }else if(num==18){
+    return 1881;
+  }else{
+    return num;
+  }
+}),"line 55");
 
 // - Replace words in strings array with the length of the word
 let lengthOnly=strings.map(x=>x.length);
@@ -68,11 +77,26 @@ var customers = [
   { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
-
+let startsWWithJ=customers.filter((customer)=>customer.firstname.startsWith("J"));
+console.log(startsWWithJ);
 // - Create new array with only first name
-
+let fnameCust=customers.map(fName=>fName.firstname);
+console.log(fnameCust);
 // - Create new array with all the full names (ex: "Joe Blogs")
-
+let fullnameCust=customers.map(customer=>`${customer.firstname} ${customer.lastname}`);
+console.log(fullnameCust);
 // - Sort the array created above alphabetically
-
+console.log(fullnameCust.sort(),"line 88");
 // - Create a new array that contains only user who has at least one vowel in the firstname.
+let vowelsName=customers.filter(function(a){
+if(a.firstname.toLowerCase().includes("a")||
+a.firstname.toLowerCase().includes("e")||
+a.firstname.toLowerCase().includes("i")||
+a.firstname.toLowerCase().includes("o")||
+a.firstname.toLowerCase().includes("u"))
+{
+  return true;
+}else{
+  return false;
+}
+});
