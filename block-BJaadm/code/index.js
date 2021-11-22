@@ -24,10 +24,10 @@ let peopleSex=persons.map(w=>w.sex);
 console.log(peopleSex,"Q.3");
 // Log the filtered named of people in peopleName that starts with 'J' or 'P'
 function startsWith(w){
-  return (w.name.toLowerCase().includes("j")||
-          w.name.toLowerCase().includes("p"));
+  return (w.startsWith("J")||
+          w.startsWith("P"));
 };
-let startsWithJP=persons.filter(x=>startsWith(x));
+let startsWithJP=peopleName.filter(x=>startsWith(x));
 console.log(startsWithJP,"Q.4");
 
 // Log the length of filtered named of people in peopleName that starts with 'A' and 'C'
@@ -41,44 +41,65 @@ console.log(startsWithJP,"Q.4");
 let allMale=persons.filter(male=>male.sex=="M");
 console.log(allMale);
 // Log all the filtered female ('F') in persons array
-let allfMale=persons.filter(fmale=>fmale.sex=="M");
+let allfMale=persons.filter(fmale=>fmale.sex=="F");
 console.log(allfMale);
 // Log all the filtered female ('F') whose name starts with 'C' or 'J' in persons array
-
+allfMale.filter(x=>x.name.startsWith("C") || x.name.startsWith("J"));
 // Log all the even numbers from peopleGrade array
-
+console.log(peopleGrade.filter(x=>x%2==0),"Q.9")
 // Find the first name that starts with 'J' in persons array and log the object
-
+console.log(persons.find(person=>person.name.startsWith("J")),"Q.10");
 // Find the first name that starts with 'P' in persons array and log the object
-
+console.log(persons.find(person=>person.name.startsWith("P")),"Q.10");
 // Find the first name that starts with 'J', grade is greater than 10 and is a female
-
+console.log(persons.find(person=>person.name.startsWith("J") && (person.grade>10) && (person.sex=="F")),"Q.11");
 // Filter all the female from persons array and store in femalePersons array
-
+let femalePerson=persons.filter(x=>x.sex=="F");
+console.log(femalePerson,"Q.12");
 // Filter all the male from persons array and store in malePersons array
-
+let malePerson=persons.filter(x=>x.sex=="M");
+console.log(malePerson,"Q.13");
 // Find the sum of all grades and store in gradeTotal
-
+let gradeTotal=peopleGrade.reduce((a,b)=>a+b);
+console.log(gradeTotal,"Q.14")
 // Find the average grade
-
+let averageGrade=gradeTotal/persons.length;
+console.log(averageGrade,"Q.15");
 // Find the average grade of male
-
+let gradeMale=malePerson.map(x=>x.grade);
+console.log(gradeMale,"Q.16.1");
+let maleTotalGrade=gradeMale.reduce((a,b)=>a+b);
+console.log(maleTotalGrade,"Q.16.2")
+console.log(maleTotalGrade/gradeMale.length,"Q.16.3");
 // Find the average grade of female
-
+let gradeFemale=femalePerson.map(x=>x.grade);
+console.log(gradeFemale,"Q.16.1");
+let femaleTotalGrade=gradeFemale.reduce((a,b)=>a+b);
+console.log(femaleTotalGrade,"Q.16.2")
+console.log(femaleTotalGrade/gradeFemale.length,"Q.16.3");
 // Find the highest grade
-
+let sortedGrade=[...peopleGrade].sort((a,b) => a - b);
+console.log(sortedGrade.pop(),"Q.18");
 // Find the highest grade in male
-
+let sortedGradeMale=[...gradeMale].sort((a,b) => a - b);
+console.log(sortedGradeMale.pop(),"Q.19");
 // Find the highest grade in female
-
+let sortedGradeFemale=[...gradeFemale].sort((a,b) => a - b);
+console.log(sortedGradeFemale.pop(),"Q.19");
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+let peopleJP=persons.filter(word=>word.name.startsWith("J") || word.name.startsWith("P") );
+let sortedGradeJP=[...peopleJP].sort((a,b) => a.grade - b.grade);
+console.log(sortedGradeJP.pop(),"Q.19");
 // Sort the peopleGrade in ascending order and log the value of peopleGrade. Notice did the elements of peopleGrade got changed?
-
+peopleGrade.sort((a,b)=>a-b);
+console.log(peopleGrade,"Q.20")
 // Sort the peopleGrade in descending order
-
+peopleGrade.sort((a,b)=>b-a);
+console.log(peopleGrade,"Q.21")
 // Sort the peopleGrade in descending order this time you have to make sure you don't mutate the original array
-
+let decendingGrades=[...peopleGrade].sort((a,b)=>a-b);
+console.log(decendingGrades,"Q.21")
 // Sort the array peopelName in ascending `ABCD..Za....z`
-
+peopleName.sort();
 // Sort the array peopelName in ascending `ABCD..Za....z`. Make sure not to mutate the array
+let asendingName=[...peopleName].sort();
