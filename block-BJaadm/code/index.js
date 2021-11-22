@@ -14,19 +14,35 @@ let persons = [
 ];
 
 // Create an array peopleName and store value of sex key from persons array
-
+let peopleName=persons.map(w=>w.name);
+console.log(peopleName,"Q.1");
 // Create an array peopleGrade and store the value of grade key from persons array
-
+let peopleGrade=persons.map(w=>w.grade);
+console.log(peopleGrade,"Q.2");
 // Create an array peopleSex and store the value of sex key from persons array
-
+let peopleSex=persons.map(w=>w.sex);
+console.log(peopleSex,"Q.3");
 // Log the filtered named of people in peopleName that starts with 'J' or 'P'
+function startsWith(w){
+  return (w.name.toLowerCase().includes("j")||
+          w.name.toLowerCase().includes("p"));
+};
+let startsWithJP=persons.filter(x=>startsWith(x));
+console.log(startsWithJP,"Q.4");
 
 // Log the length of filtered named of people in peopleName that starts with 'A' and 'C'
-
+// function startsWithJP(w){
+//   return (w.name.toLowerCase().includes("a")||
+//           w.name.toLowerCase().includes("c"));
+// };
+// let startsAC=persons.filter(x=> startsWithJP(x));
+// console.log(startsAC,"Q.4");
 // Log all the filtered male ('M') in persons array
-
+let allMale=persons.filter(male=>male.sex=="M");
+console.log(allMale);
 // Log all the filtered female ('F') in persons array
-
+let allfMale=persons.filter(fmale=>fmale.sex=="M");
+console.log(allfMale);
 // Log all the filtered female ('F') whose name starts with 'C' or 'J' in persons array
 
 // Log all the even numbers from peopleGrade array
