@@ -16,19 +16,26 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
-
+let personsGrades=persons.map(x=>x.grade);
+console.log(personsGrades,"Q.1.1")
+console.log(personsGrades.reduce((a,b)=>a+b)/personsGrades.length,"Q.1.2")
 // Find the average grade of male
-
+let allMaleArray=persons.filter(x=>x.sex=="M");
+let allMaleGrades=allMaleArray.map(x=>x.grade);
+console.log(allMaleGrades.reduce((a,b)=>a+b)/allMaleGrades.length,"Q.2")
 // Find the average grade of female
-
-// Find the highest grade
+let allFemaleArray=persons.filter(x=>x.sex=="F");
+let allMFemaleGrades=allFemaleArray.map(x=>x.grade);
+console.log(allMFemaleGrades.reduce((a,b)=>a+b)/allMFemaleGrades.length,"Q.3")
 
 // Find the highest grade in male
-
+let forHighestInMale=[...allMaleGrades].sort((a,b)=>a-b);
+console.log(forHighestInMale.pop(),"Q.4");
 // Find the highest grade in female
-
+let forHighestInFemale=[...allFemaleGrades].sort((a,b)=>a-b);
+console.log(forHighestInFemale.pop(),"Q.5");
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+let highestGrade = persons.filter(x => x.name.startsWith('J') || x.name.startsWith('P')).map(x => x.grade).sort((a,b) => a - b).pop();
 const fruitBasket = [
   'banana',
   'cherry',
